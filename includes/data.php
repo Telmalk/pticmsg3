@@ -1,18 +1,30 @@
 <?php
     $data = [
-      "got" => [
-          "title" => "Game of thrones",
-          "description" => "Neuf familles nobles rivalisent pour le contrôle du Trône de Fer dans les sept royaumes de Westeros. Pendant ce temps, des anciennes créatures mythiques oubliées reviennent pour faire des ravages.",
+      "cdm" => [
+          "title" => "cité de la peur",
+          "description" => "con de mime",
           "date" => "27/04/20",
-          "img" => "link.jpg",
+          "img" => "cdlp.jpg",
           "img-alt" => "Représentation du trone de fer",
-          "span-text" => "palpitant",
-          "span-label" => "success",
+          "span-text" => "Rigolo",
+          "span-label" => "primary",
       ],
         "doom" => [
-            "title" => "Mother funcking doom"
+            "title" => "Mother funcking doom",
+            "description" => "DOOOMM",
+            "img" => "doom.jpg",
+            "img-alt" => "DOOM",
+            "span-text" => "DOOM",
+            "span-label" => "danger",
+            "date" => "12/12/12"
         ],
         "link" => [
             "title" => "AYAAAAAAAA",
+            "description" => "AYAAAAAAAAAYAAAAAAAAAYAAAAAAAAAYAAAAAAAAAYAAAAAAAAAYAAAAAAAA",
+            "img" => "link.jpg",
+            "img-alt" => "link",
+            "span-text" => "aventure",
+            "span-label" => "success",
+            "date"=> "12/12/12",
         ]
     ];
