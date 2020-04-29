@@ -18,7 +18,7 @@
                                     foreach ($data as $key => $value) {
                                         ?>
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="<?=$key?>"><?=$value['title']?></a>
+                                            <a class="nav-link" href="<?=APP_URL?>?<?=APP_PARAM_PAGE?>=<?=$key?>"><?=$value['title']?></a>
                                         </li>
                                         <?php
                                     }
