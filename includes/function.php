@@ -53,8 +53,30 @@
         <?php
     }
 
-    function getData(array $data , string $currentPage): ?array {
-        return $data[$currentPage] ?? null;
+    function getData(PDO $pdo , string $currentPage): ?array {
+        $sql = "
+            SELECT
+                title,
+                img,
+                `img-alt`,
+                `span-text`,
+                `span-label`,
+                description
+            FROM
+                page
+            WHERE 
+                slug = :slug   
+        ";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(":slug", $currentPage);
+        $stmt->execute();
+        errorHandler($stmt);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$data) {
+            return null;
+        }
+        return $data;
     }
 
     function getFooter() {
@@ -62,4 +84,10 @@
         </body>
         </html>
         <?php
+    }
+
+    function errorHandler(PDOStatement $stmt) {
+        if ($stmt->errorCode() !== '00000') {
+            throw new PDOException($stmt->errorInfo()[2]);
+        }
     }
